@@ -1,0 +1,60 @@
+#header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  padding: 24px;
+  border-bottom: 1px solid #ececec;
+}
+
+.header__webstudio-logo {
+  font-family: "raleway";
+  font-size: 26px;
+  font-weight: 700;
+  padding-right: 93px;
+  padding-left: 191px;
+  margin: 0;
+}
+.header__webstudio {
+  color: var(--logo-link-txt-cl);
+  list-style: none;
+}
+.header__menu {
+  font-weight: 500;
+  padding-right: 344px;
+  padding-left: 0px;
+  font-size: 14px;
+  margin: 0;
+  display: flex;
+  letter-spacing: 0.02em;
+}
+.header__menu > .header__item:not(:last-child) {
+  margin-right: 50px;
+}
+.header__contact {
+  font-weight: 500;
+  font-size: 14px;
+  margin: 0;
+  letter-spacing: 0.02em;
+  padding-right: 195px;
+  padding-left: 0px;
+  display: flex;
+  color: var(--secondary-txt-cl);
+}
+.header__icon-phone {
+  width: 12px;
+  height: 16px;
+  fill: #757575;
+  margin-right: 10px;
+}
+.header__icon-letter {
+  width: 16px;
+  height: 12px;
+  fill: #757575;
+  margin-right: 10px;
+}
+.header__contact > .header__item:not(:last-child) {
+  margin-right: 50px;
+}
+
+/*# sourceMappingURL=header.css.map */

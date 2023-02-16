@@ -1,0 +1,47 @@
+.clients {
+   &__title{
+	font-weight: 700;
+	font-size: 36px;
+	line-height: 1.16;
+	text-align: center;
+	letter-spacing: 0.03em;
+	margin-bottom: 50px;
+	text-transform: capitalize;
+	margin-top: 59px;
+  }
+
+  &__list{
+	display: flex;
+	justify-content: center;
+	gap: 30px;
+	margin-bottom: 151px;
+	margin-top: 0;
+	padding-left: 0px;
+  }
+  
+  &__link {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 170px;
+	height: 92px;
+	border-radius: 4px;
+	border: 1px solid var(--logo-bg-secundary);
+  }
+  
+  &__link:hover,
+  &__link:focus {
+	border: 1px solid var(--btn-primary-bg-cl);
+  }
+  &__link:hover &__logo,
+  &__link:focus &__logo {
+	fill: var(--btn-primary-bg-cl);
+  }
+
+  &__logo {
+	width: 106px;
+	height: 60px;
+	fill: var(--logo-bg-secundary);
+  }
+
+}
