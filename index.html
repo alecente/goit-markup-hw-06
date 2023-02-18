@@ -56,16 +56,48 @@
 		<!----------------------startmodal---------------->
 			<div class="backdrop is-hidden" data-modal>
 				<div class="modal">
-					<ul class="startmodal__boxinternal">
-						<li class="startmodal__element">
+					<div class="form__close-container">
+						<button class="form__btn-close" data-modal-close><svg class="form_icon-closed">
+						<use href="./images/icons.svg#icon-closed"></use></svg></button>
+					</div>
+					<ul class="form__boxinternal">
+						<li class="form__element">
 							<div>
-								<h1 class="startmodal__title">Titulo del modal</h1>
+								<h1 class="form__title">Deje sus datos, nos contactaremos con usted</h1>
 							</div>
 						</li>
-						<li class="__subscribe">
-							<form></form>
+						<li class="form__subscribe">
+							<form name="signup_form" autocomplete="on" novalidate>
+								<label for="user_name" class="form__subtitle">Nombre</label>
+								<div class="form__input-wrapper">
+									<svg class="form__icon">
+										<use href="./images/icons.svg#icon-account"></use>
+									</svg>
+									<input type="name" name="name" id="user_name" />
+								</div>
+								<label for="user_phone" class="form__subtitle">Teléfono</label>
+								<div class="form__input-wrapper">
+									<svg class="form__icon">
+										<use href="./images/icons.svg#icon-phone2"></use>
+									</svg>
+									<input type="tel" name="tel" id="user_phone"/>
+								</div>
+								<label for="user_email" class="form__subtitle">Email</label>
+								<div class="form__input-wrapper">
+									<svg class="form__icon">
+										<use href="./images/icons.svg#icon-letter2"></use>
+									</svg>									
+									<input type="phone" name="phone" id="user_email"/>
+								</div>
+								<div  class="form__input-wrapper">
+									<label>
+										<div class="form__subtitle">Comentarios</div>
+										<textarea name="comments" rows="5" placeholder="Introduzca el texto" class="form__comments-container"></textarea>
+									</label>
+								</div>
+								<div><button type="submit">Submit</button></div>
+							</form>
 						</li>
-						<button data-modal-close>Boton de cerrado</button>
 					</ul>
 				</div>				
 			</div>
