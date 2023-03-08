@@ -8,30 +8,24 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    @include w-h(100%, 100%);
     background-color: rgba(0, 0, 0, 0.5);
     transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1); visibility: 250ms;
 }
 
     #modal{
         position: fixed;
-        width: 528px;
-        height: 581px;
+        @include w-h(528px, 581px);
         border-radius: 4px;
         background-color: #ffffff;
         box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
-        transform: translate(-50%, -50%);
-        top: 50%;
-        left: 50%;
-    
+        @include center-translate();    
     }
 
     .modal{
 
     &__close-container{
-        width: 100%;
-        height: 30px;
+        @include w-h(100%, 30px);
         padding-top: 8px;
         padding-bottom: 2px;
     }
@@ -40,16 +34,14 @@
         position:absolute;
         border: 1px solid rgba(0, 0, 0, 0.1);
         background-color: #ffffff;
-        width: 30px;
-        height: 30px;
+        @include w-h (30px, 30px);
         border-radius: 50%;
         right: 8px;
         top: 8px;
     }
 
     &__icon-closed{
-        width: 11px;
-        height: 11px;
+        @include w-h(11px, 11px);
     }
 
     &__icon-closed:hover,
@@ -63,12 +55,9 @@
     }
 
     &__title{
-        font-family: 'Roboto';
-        font-weight: 700;
-        font-size: 20px;
-        line-height: 23px;
+        @include text-height-spacing-family(23px, 0.03em);
+        @include text-weight-size ('', 20px);
         text-align: center;
-        letter-spacing: 0.03em;
         margin-top: 0;
         margin-bottom: 12px;
 
@@ -80,18 +69,13 @@
     }
 
     &__icon{
-        position:absolute;
-        width: 16px;
-        height: 20px;
-        top: 28%;        
-        left: 15px;
+        @include w-h(16px, 20px);
+        @include position-top-left(absolute, 28%, 15px);
     }
 
     &__subtitle{
         color: var(--secondary-txt-cl);
-        font-size: 12px;
-        font-weight: 400;
-        font-family: 'roboto';
+        @include text-weight-size(400,12px);
     }
 
     &__comments-container{
@@ -101,11 +85,9 @@
         padding: 0;
         box-sizing: border-box;
         padding: 12px 16px 12px 16px;
-        font-family: 'Roboto';
+        @include text-height-spacing-family (14px, 0.03em);
+        @include text-weight-size (400, 12px);
         font-style: normal;
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 14px;
         border: 1px solid rgba(33, 33, 33, 0.2);
         border-radius: 4px;
         outline: none;
@@ -121,10 +103,7 @@
     /*final*/
 
     &__final{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        @include flex-container(center, center, column);
         padding: 0;
     }
 
@@ -134,8 +113,7 @@
  
     &__checkbox{
         position: absolute;
-        width: 20px;
-        height: 20px;
+        @include w-h(20px, 20px);
         margin-left: 15px;
         border: 0;
         padding: 0;
@@ -144,8 +122,7 @@
 
     &__icon-white{
         display: inline-block;
-        width: 16px;
-        height: 16px;
+        @include w-h(16px, 16px);
         margin-left: 17px;
         margin-right: 7px;
         border: 2px solid #212121;
@@ -164,12 +141,9 @@
     
 
     &__terms1{
-        font-family: 'Roboto';
+        @include text-weight-size (400, 14px);
+        @include text-height-spacing-family (24px, 0.03em);
         color: #757575;
-        font-weight: 400;
-        size:14px;
-        line-height: 24px;   
-        width: 400px; 
         display: inline-flex;
     }
 
@@ -178,8 +152,7 @@
 
     &__submit1{
         color: var(--white-txt-cl);
-        width: 200px;
-        height: 50px;
+        @include w-h (200px, 50px);
         background: #2196F3;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
         border-radius: 4px;       
