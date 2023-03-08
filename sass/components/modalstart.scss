@@ -14,9 +14,7 @@
     transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1); visibility: 250ms;
 }
 
-
-
-    .modal{
+    #modal{
         position: fixed;
         width: 528px;
         height: 581px;
@@ -29,14 +27,16 @@
     
     }
 
-    .form__close-container{
+    .modal{
+
+    &__close-container{
         width: 100%;
         height: 30px;
         padding-top: 8px;
         padding-bottom: 2px;
     }
 
-    .form__btn-close{
+    &__btn-close{
         position:absolute;
         border: 1px solid rgba(0, 0, 0, 0.1);
         background-color: #ffffff;
@@ -47,17 +47,22 @@
         top: 8px;
     }
 
-    .form_icon-closed{
+    &__icon-closed{
         width: 11px;
         height: 11px;
     }
 
-    .form__boxinternal{
+    &__icon-closed:hover,
+    &__icon-closed:focus{
+        fill: #2196F3;
+    }
+
+    &__boxinternal{
         padding-right: 40px;
         margin-top: 0px;
     }
 
-    .form__title{
+    &__title{
         font-family: 'Roboto';
         font-weight: 700;
         font-size: 20px;
@@ -69,69 +74,180 @@
 
     }
 
-    .form__input-wrapper{
+    &__input-wrapper{
         position:relative;
+        
     }
 
-    .form__icon{
+    &__icon{
         position:absolute;
-        width: 12px;
-        height: 12px;
-        top: 50%;
-        transform: translateY(-50%);
+        width: 16px;
+        height: 20px;
+        top: 28%;        
         left: 15px;
     }
 
-    .form__subtitle{
+    &__subtitle{
         color: var(--secondary-txt-cl);
         font-size: 12px;
         font-weight: 400;
         font-family: 'roboto';
     }
 
-    .form__comments-container{
+    &__comments-container{
         width: 100%;
         margin-top: 4px;
+        margin-bottom: 20px;
         padding: 0;
         box-sizing: border-box;
         padding: 12px 16px 12px 16px;
-        color: rgba(117, 117, 117, 0.5);
         font-family: 'Roboto';
         font-style: normal;
         font-weight: 400;
         font-size: 12px;
         line-height: 14px;
-        border-color: rgba(33, 33, 33, 0.2);
+        border: 1px solid rgba(33, 33, 33, 0.2);
+        border-radius: 4px;
+        outline: none;
+    }
+
+    &__comments-container::placeholder{
+        color: rgba(117, 117, 117, 0.5);
+    }
+
+
+
+    
+    /*final*/
+
+    &__final{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+    }
+
+    &__conditions{
+        margin-bottom: 10px;
+    }
+ 
+    &__checkbox{
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        margin-left: 15px;
+        border: 0;
+        padding: 0;
+        appearance: none;
+    }
+
+    &__icon-white{
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        margin-left: 17px;
+        margin-right: 7px;
+        border: 2px solid #212121;
+        border-radius: 4px;
+        
+    }
+
+    &__checkbox--active:checked + &__icon-white {
+        background-color: var(--btn-primary-bg-cl);
+        border-color: transparent;
+        background-image: url(../images/checked.svg);
+        background-size: contain;
+        background-origin: border-box;
+        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    
+
+    &__terms1{
+        font-family: 'Roboto';
+        color: #757575;
+        font-weight: 400;
+        size:14px;
+        line-height: 24px;   
+        width: 400px; 
+        display: inline-flex;
+    }
+
+   
+    /*----*/
+
+    &__submit1{
+        color: var(--white-txt-cl);
+        width: 200px;
+        height: 50px;
+        background: #2196F3;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+        border-radius: 4px;       
+    }
+
+    &__user-name{
+        box-sizing: border-box;
+        width: 100%;
+        padding: 10px 42px 10px 42px;
+        border: 1px solid rgba(33, 33, 33, 0.2);
+        margin-bottom: 10px;
+        margin-top: 4px;
+        border-radius: 4px;
+        outline: none;        
+    }
+
+    &__user-phone{
+        box-sizing: border-box;
+        width: 100%;
+        padding: 10px 42px 10px 42px;
+        border: 1px solid rgba(33, 33, 33, 0.2);
+        margin-bottom: 10px;
+        margin-top: 4px;
+        border-radius: 4px;
+        outline: none;
+    }
+
+    &__user-email{
+        box-sizing: border-box;
+        width: 100%;
+        padding: 10px 42px 10px 42px;
+        border: 1px solid rgba(33, 33, 33, 0.2);
+        margin-bottom: 10px;
+        margin-top: 4px;
+        border-radius: 4px;
+        outline: none;        
+    }
+
+}
+    
+    .modal__input-wrapper:focus-within .modal__icon{
+        border-color: var(--btn-primary-bg-cl);
+        box-shadow: none;
+        fill:#2196F3;
+    }
+
+    .modal__user-email:focus-within{
+        border-color: var(--btn-primary-bg-cl);
+        box-shadow: none;
+    }
+    
+    .modal__user-phone:focus-within{
+        border-color: var(--btn-primary-bg-cl);
+        box-shadow: none;
+    }
+
+    .modal__user-name:focus-within{
+        border-color: var(--btn-primary-bg-cl);
+        box-shadow: none;
+    }
+    
+    .modal__comments-container:focus-within{
+        border-color: var(--btn-primary-bg-cl);
+        box-shadow: none;
     }
 
     textarea{
         resize: none;
     }
-
-    #user_name{
-        box-sizing: border-box;
-        width: 100%;
-        padding: 10px 42px 10px 42px;
-        border-color: rgba(33, 33, 33, 0.2);
-        margin-bottom: 10px;
-        margin-top: 4px;
-        
-    }
-
-    #user_phone{
-        box-sizing: border-box;
-        width: 100%;
-        padding: 10px 42px 10px 42px;
-        border-color: rgba(33, 33, 33, 0.2);
-        margin-bottom: 10px;
-        margin-top: 4px;
-    }
-
-    #user_email{
-        box-sizing: border-box;
-        width: 100%;
-        padding: 10px 42px 10px 42px;
-        border-color: rgba(33, 33, 33, 0.2);
-        margin-bottom: 10px;
-        margin-top: 4px;
-    }
+    
+    

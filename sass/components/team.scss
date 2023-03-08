@@ -1,3 +1,5 @@
+@import "../utils/mixins.scss";
+
 #team{
 	padding-top: 94px;
 	padding-bottom: 94px;
@@ -7,20 +9,18 @@
 
 .team{
 		&__title{
-			line-height: 42px;
+			@include text-height-spacing-family(42px, 0.03em);
 			text-align: center;
-			letter-spacing: 0.03em;
 			margin:0;
 			margin-bottom: 50px;
 		}
 
 		&__list{
-			max-width: 1170px;
-			list-style:none;
-			justify-content: space-between;
 			display: flex;
+			justify-content: space-between;
+			max-width: 1170px;
+			gap: 37px; 
 			padding-left: 0;
-			grid-gap: 37px; 
 			margin: 0;
 		}
 
@@ -37,15 +37,13 @@
 
 
 		&__name{
-			font-weight: 500;
-			font-size: 16px;
+			@include text-weight-size(500);
 			line-height: 19px;
 			text-align: center;
 		}
 
 		&__charge{
-			font-weight: 400;
-			font-size: 16px;
+			@include text-weight-size(400);
 			line-height: 19px;
 			text-align: center;
 			letter-spacing: 0.03em;
@@ -56,20 +54,15 @@
 			display: flex;
 			justify-content: center;
 			gap: 10px;
-			list-style: none;
 			padding-left: 0px;
 			padding-bottom: 30px;
 		}
 
 		
 		&__link {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			width: 44px;
-			height: 44px;
+			@include flex-container(center, center);
+			@include w-h(44px, 44px);
 			border-radius: 50%;
-			text-decoration: none;
 		}
 
 		&__link:hover,
@@ -85,8 +78,7 @@
 
 
 		&__logo-social {
-			width: 20px;
-			height: 20px;
+			@include w-h(20px, 20px);
 			fill: #afb1b8;
 		}
 

@@ -1,6 +1,6 @@
 #advantages{
 	padding-top: 82px;
-	padding-bottom: 94px;
+	padding-bottom: 60px;
 }
 
 .advantages{
@@ -13,24 +13,20 @@
 		}
 
 		&__item{
-			margin-bottom: 0;
-			margin-top: 0;
+			margin: 0;
 			padding-left: 0px;
 		}
 
 		&__card{
-			display: flex;
-			justify-content: center;
-			align-items: center;
+			@include flex-container(center, center);
 			height: 120px;
 			margin-bottom: 30px;
 			background-color: var(--seconday-bg-cl);
 		}
 
 		&__title{
-			line-height: 24px;
-			font-size: 14px;
-			letter-spacing: 0.03em;
+			@include text-height-spacing-family('', 0.03em);
+			@include text-weight-size (700, 14px);
 			text-transform: uppercase;
 			margin:0;
 			display: flex;
@@ -39,15 +35,13 @@
 		}
 
 		&__icon{
-			width: 70px;
-			height: 70px;
+			@include w-h(70px, 70px);
 		}
 
 		&__text{
-			line-height: 1.71;
+			@include text-height-spacing-family(171%, 0.03em);
+			@include text-weight-size(400, 14px);
 			color: var(--secondary-txt-cl);
-			font-size: 14px;
-			letter-spacing: 0.03em;
 		}
 
 }

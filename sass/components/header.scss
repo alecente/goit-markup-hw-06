@@ -1,12 +1,12 @@
+@import "../utils/mixins.scss";
+
 #header{
-	display: flex;
-	align-items: center;
-	justify-content: center;
+	@include flex-container(center, center);
 	background-color: #ffffff;
-	padding: 24px 24px 24px 24px;
+	padding: 24px;
 	border-bottom: 1px solid #ececec;
 }
-
+ 
 .nav{
 	margin: 0;
 	padding: 0;
@@ -14,9 +14,8 @@
 
 .header{
 	&__webstudio-logo{
+		@include text-weight-size(700, 26px);
 		font-family: 'raleway';
-		font-size: 26px;
-		font-weight: 700;
 		padding-right: 93px;
 		padding-left: 191px;
 		margin: 0;
@@ -25,61 +24,51 @@
 	&__webstudio{
 		color:var(--logo-link-txt-cl);
 		list-style: none;
-		margin: 0;
 	}
 
 	&__menu{
-		font-weight: 500;
+		@include text-weight-size(500, 14);
 		padding-right: 344px;
 		padding-left: 0px;
-		padding-bottom: 0px;
-		font-size: 14px;
+		margin: 0;
 		display: flex;
 		letter-spacing: 0.02em;
-		align-items:baseline;
-		margin: 0;
+		transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 	}
 
-	&__color-linked{
+	&__color-link{
 		color: #2196F3;
 	}
 
-	&__linked{		
-		position: relative;
-		color: #2196F3;
-		border-bottom: #2196F3 solid 4px;
-		padding: 27px 0;
-	}
-	
-	
+		
 	&__menu > &__item:not(:last-child){
 		margin-right: 50px;
 	}
 
-	
-
 	&__contact{
-		font-weight: 500;
-		font-size: 14px;
+		@include text-weight-size(500, 14px);
 		margin: 0;
 		letter-spacing: 0.02em;
 		padding-right: 195px;
 		padding-left: 0px;
-		display: flex;
+		@include flex-container(center, center);
 		color: var(--secondary-txt-cl);
+		gap: 30px;
+	}
+
+	&__link1{
+		display: inline-flex;
+		align-items: center;
+		fill: var(--secondary-txt-cl);
 	}
 
 	&__icon-phone{
-		width: 12px;
-		height: 16px;
-		fill:#757575;
+		@include w-h(12px, 16px);
 		margin-right: 10px;
 	}
 
 	&__icon-letter{
-		width: 16px;
-		height: 12px;
-		fill:#757575;
+		@include w-h(16px, 12px);
 		margin-right: 10px;
 	}
 
@@ -89,3 +78,40 @@
 
 }
 
+.header__link1:hover,
+.header__link1:focus {
+  color: var(--btn-primary-bg-cl);
+  fill: var(--btn-primary-bg-cl);
+}
+
+.header__linked::after {
+	content: "";
+	@include position-top-left(relative, 30px, 0);
+	bottom: 0;
+	display: block;
+	transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+	/* background-image: url(../images/icons.svg#icon-hover-header-line);
+	fill: #2196f3; */
+	@include w-h(100%, 4px);
+	opacity: 0;
+	background-color: var(--btn-primary-bg-cl);
+	border-radius: 2px;
+  }
+  
+.header__linked:hover::after {
+	opacity: 1;
+}
+
+.header__linked2::after {
+	content: "";
+	@include position-top-left(relative, 30px, 0);
+	bottom: 0;
+	display: block;
+	transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+	/* background-image: url(../images/icons.svg#icon-hover-header-line);
+	fill: #2196f3; */
+	@include w-h(100%, 4px);
+	opacity: 1;
+	background-color: var(--btn-primary-bg-cl);
+	border-radius: 2px;
+  }

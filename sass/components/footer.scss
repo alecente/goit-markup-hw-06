@@ -1,8 +1,8 @@
 #footer{
 	background-color: var(--primary-bg-cl);
 	padding-top: 60px;
-	line-height: 1.71;
 	padding-bottom: 60px;
+	line-height: 1.71;	
 	justify-content: center;
 	
 }
@@ -21,8 +21,7 @@
 
 		&__webstudio-logo{
 			font-family: 'raleway';
-			font-size: 26px;
-			font-weight: 700;
+			@include text-weight-size(700, 26px);
 			padding-right: 93px;
 			margin: 0;
 		}
@@ -39,10 +38,8 @@
 		}
 
 		&__contact{
-			font-weight: 400;
-			font-size: 14px;
-			line-height: 1.71;
-			letter-spacing: 0.03em;
+			@include text-weight-size(400, 14px);
+			@include text-height-spacing-family(1.71, 0.03em);
 			font-style: normal;
 			color: #ffffff;
 			padding-left: 0px;
@@ -54,27 +51,21 @@
 		}
 
 		&__join{
-			font-weight: 700;
-			font-size: 14px;
-			line-height: 1.14;
-			letter-spacing: 0.03em;
+			@include text-weight-size(700, 14px);
+			@include text-height-spacing-family(1.14, 0.03em);
 			text-transform: uppercase;
 			color: var(--white-txt-cl);
 			margin-bottom: 20px;
 		}
 		
 		&__icon {
-			width: 20px;
-			height: 20px;
+			@include w-h(20px, 20px);
 			fill: var(--white-txt-cl);
 		}
 
 		&__link {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			width: 44px;
-			height: 44px;
+			@include flex-container(center, center);
+			@include w-h (44px, 44px);
 			border-radius: 50%;
 			background-color: rgba(255, 255, 255, 0.1);
 		}

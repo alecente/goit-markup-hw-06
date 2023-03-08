@@ -1,3 +1,5 @@
+@import "../utils/mixins.scss";
+
 #solution{
 	color: #ffff;
 	text-align: center;
@@ -6,45 +8,40 @@
 
 .solution{
 	&__bgima{
-		background-image: linear-gradient(
-		0deg,
-		rgba(47, 48, 58, 0.4),
-		rgba(47, 48, 58, 0.4)
-		),
-		url(../images/imagen17.jpg);
-		background-size: cover;
-		background-repeat: no-repeat;
-		background-position: center;
-		max-width: 1600px;
-		margin: 0 auto;
 		padding-top: 200px;
 		padding-bottom: 200px;
+		max-width: 1600px;
+		min-height: 100%;
+		@include margin-auto();
+		background-image: linear-gradient( to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4) ), url(../images/imagen18.jpg);
+		background-color: var(--hero-background-color);
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+		text-align: center;
+		color: var(--white-txt-cl);
+		padding-bottom: 210px;		
 	}
 
 
 	&__title{
 		margin-top: 0;
 		margin-bottom: 40px;
-		letter-spacing: 0.06em;
-		line-height: 60px;
+		@include text-height-spacing-family(136%, 0.06em);
 		text-transform: uppercase;
 	}
 
 
 	&__btn{
+		display: inline-block;
 		color: #ffffff;
-		font-weight:700;
-		padding-top: 10px;
-		padding-bottom: 10px;
-		padding-left: 32px;
-		padding-right: 32px;
+		text-align: center;
+		@include text-weight-size (700, 16px);
+		padding: 10px 30px 10px 32px;
 		background-color: var(--btn-primary-bg-cl);
 		height: 50px;
-		font-size: 16px;
 		border-radius:4px;
 		cursor:pointer;
-		text-align: center;
-		display: inline-block;
 	}
 
 	&__btn:hover{

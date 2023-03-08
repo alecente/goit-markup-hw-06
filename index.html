@@ -5,7 +5,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="Página inicial de la tarea 2" content="width=device-width, initial-scale=1.0" />
-		<title>Web studio-tarea 5</title>
+		<title>Web studio-tarea 6</title>
 		<link rel="stylesheet" type="text/css" href="./css/styles.css" />
 		<link rel="stylesheet" type="text/css" href="./css/normalize.css"/>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,28 +19,32 @@
 	
 		
 		<!----------------------header---------------->
-	<body class="main-container"></body>
-			<header id="header">
-				<li class="header__webstudio">
-					<a href="#" class="header__webstudio-logo">WebStudio</a>
+		<body class="main-container"></body>
+		<header id="header">
+			<li class="header__webstudio">
+				<a href="#" class="header__webstudio-logo">WebStudio</a>
+			</li>
+			<nav>
+				<ul class="header__menu">
+					<li class="header__item  header__color-link"><a href=#  class="header__linked2">Estudio</a>
+					</li>
+					<li class="header__item"><a href="portafolio.html" class="header__linked">Portafolio</a>
+					</li>
+					<li class="header__item"><a href="contact.html"  class="header__linked">Contactos</a>
+					</li>
+				</ul>
+			</nav>
+			<ul class="header__contact">
+				<li class="header__contact1">
+					<a href="mailto:info@devstudio.com" class="header__link1"><svg class="header__icon-letter"><use href="./images/icons.svg#icon-letter"></use></svg>
+					info@devstudio.com</a>
 				</li>
-				<nav>
-					<ul class="header__menu">
-						<li class="header__item header__color-linked"><a href="estudio.html"  class="header__linked">Estudio</a>
-						</li>
-						<li class="header__item"><a href="portafolio.html">Portafolio</a>
-						</li>
-						<li class="header__item"><a href="contact.html">Contactos</a>
-						</li>
-					</ul>
-				</nav>
-					<ul class="header__contact">
-						<li><svg class="header__icon-letter"><use href="./images/icons.svg#icon-letter"></use></svg></li>
-						<li class="header__item-contact"><a href="mailto:info@devstudio.com" class="header__link">info@devstudio.com</a></li>
-						<li><svg class="header__icon-phone"><use href="./images/icons.svg#icon-phone"></use></svg></li>
-						<li class="header__item-contact"><a href="tel:+525555296000" class="header__link"> +525555296000</a></li>
-					</ul>
-			</header>
+				<li class="header__contact1">
+					<a href="tel:+525555296000" class="header__link1"><svg class="header__icon-phone"><use href="./images/icons.svg#icon-phone"></use></svg>
+					 +525555296000</a>
+				</li>
+			</ul>
+		</header>
 		
 		
 		<!---------------------solutions---------------->
@@ -55,47 +59,61 @@
 
 		<!----------------------startmodal---------------->
 			<div class="backdrop is-hidden" data-modal>
-				<div class="modal">
-					<div class="form__close-container">
-						<button class="form__btn-close" data-modal-close><svg class="form_icon-closed">
+				<div id="modal">
+					<div class="modal__close-container">
+						<button class="modal__btn-close" data-modal-close><svg class="modal__icon-closed">
 						<use href="./images/icons.svg#icon-closed"></use></svg></button>
 					</div>
-					<ul class="form__boxinternal">
-						<li class="form__element">
+					<ul class="modal__boxinternal">
+						<li class="modal__element">
 							<div>
-								<h1 class="form__title">Deje sus datos, nos contactaremos con usted</h1>
+								<h1 class="modal__title">Deje sus datos, nos contactaremos con usted</h1>
 							</div>
 						</li>
-						<li class="form__subscribe">
+						<li class="modal__subscribe">
 							<form name="signup_form" autocomplete="on" novalidate>
-								<label for="user_name" class="form__subtitle">Nombre</label>
-								<div class="form__input-wrapper">
-									<svg class="form__icon">
+								<label class="modal__subtitle">Nombre</label>
+								<div class="modal__input-wrapper">
+									<svg class="modal__icon">
 										<use href="./images/icons.svg#icon-account"></use>
 									</svg>
-									<input type="name" name="name" id="user_name" />
+									<input type="name" name="name" class="modal__user-name" />
 								</div>
-								<label for="user_phone" class="form__subtitle">Teléfono</label>
-								<div class="form__input-wrapper">
-									<svg class="form__icon">
+								<label class="modal__subtitle">Teléfono</label>
+								<div class="modal__input-wrapper">
+									<svg class="modal__icon">
 										<use href="./images/icons.svg#icon-phone2"></use>
 									</svg>
-									<input type="tel" name="tel" id="user_phone"/>
+									<input type="tel" name="tel" class="modal__user-phone"/>
 								</div>
-								<label for="user_email" class="form__subtitle">Email</label>
-								<div class="form__input-wrapper">
-									<svg class="form__icon">
+								<label class="modal__subtitle">Email</label>
+								<div class="modal__input-wrapper">
+									<svg class="modal__icon">
 										<use href="./images/icons.svg#icon-letter2"></use>
 									</svg>									
-									<input type="phone" name="phone" id="user_email"/>
+									<input type="phone" name="phone" class="modal__user-email"/>
 								</div>
-								<div  class="form__input-wrapper">
+								<div  class="modal__input-wrapper">
 									<label>
-										<div class="form__subtitle">Comentarios</div>
-										<textarea name="comments" rows="5" placeholder="Introduzca el texto" class="form__comments-container"></textarea>
+										<div class="modal__subtitle">Comentarios</div>
+										<textarea name="comments" rows="5" placeholder="Introduzca el texto" class="modal__comments-container"></textarea>
 									</label>
 								</div>
-								<div><button type="submit">Submit</button></div>
+								<ul class="modal__final">
+									<li class="modal__conditions">
+										<input type="checkbox" name="terms" value="accept" class="modal__checkbox modal__checkbox--active"/>
+										<div class="modal__icon-white"></div>
+										<div class="modal__terms1">
+											<label>
+												<span for="terms">Estoy de acuerdo con el boletín informativo y acepto los</span>
+												<a class="terms" href="">Términos y Condiciones</a>
+											</label>
+										</div>
+									</li>
+									<li>
+										<button type="submit"  class="modal__submit1">Enviar</button></div>
+									</li>
+								</ul>
 							</form>
 						</li>
 					</ul>
