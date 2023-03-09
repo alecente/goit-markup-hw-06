@@ -1,3 +1,5 @@
+
+@import "../utils/mixins.scss";
 .backdrop.is-hidden {
     visibility: hidden;
     opacity: 0;
@@ -103,31 +105,32 @@
     /*final*/
 
     &__final{
-        @include flex-container(center, center, column);
+        justify-content: center;
+        align-items: center;
         padding: 0;
     }
 
     &__conditions{
+        @include flex-container ('', stretch, row);
         margin-bottom: 10px;
     }
  
     &__checkbox{
         position: absolute;
         @include w-h(20px, 20px);
-        margin-left: 15px;
         border: 0;
         padding: 0;
+        margin-left: 20px;
         appearance: none;
     }
 
     &__icon-white{
         display: inline-block;
-        @include w-h(16px, 16px);
-        margin-left: 17px;
+        @include w-h(16px, 13px);
+        margin-left: 23px;
         margin-right: 7px;
         border: 2px solid #212121;
-        border-radius: 4px;
-        
+        border-radius: 4px;              
     }
 
     &__checkbox--active:checked + &__icon-white {
@@ -144,18 +147,26 @@
         @include text-weight-size (400, 14px);
         @include text-height-spacing-family (24px, 0.03em);
         color: #757575;
-        display: inline-flex;
+        
     }
 
    
+
+   
     /*----*/
+
+    &__submit{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
     &__submit1{
         color: var(--white-txt-cl);
         @include w-h (200px, 50px);
         background: #2196F3;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-        border-radius: 4px;       
+        border-radius: 4px;        
     }
 
     &__user-name{
